@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+-->
+<mapper namespace="com.cx.mapping.UserMapper">
+
+   <insert id="insert" parameterType="com.cx.model.User">
+		   insert into user(name,age) values(#{name}, #{age})
+   </insert>
+
+	<select id="findByName" parameterType="java.lang.String" resultType="com.cx.model.User">
+		select * from user where name like '%${value}%'
+	</select>
+	
+	<update id="updateByName" parameterType="java.lang.String">
+		update user set name=#{1} where name=#{0}
+	</update>
+	
+	<delete id="deleteByName" parameterType="java.lang.String">
+		delete user from user where name=#{0}
+	</delete>
+	
+</mapper>
