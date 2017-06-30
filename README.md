@@ -1,4 +1,4 @@
-# spring　基于spring集合4.2.4版本，尽量用最简洁的注解配置整个环境
+# 基于spring集合4.2.4版本，尽量用最简洁的注解配置整个环境
 HelloSpringMvc   springmvc基本框架
 
 SpringMvcJdbc    借助jdbcTemplate访问数据库
